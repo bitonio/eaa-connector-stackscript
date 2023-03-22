@@ -24,12 +24,12 @@ echo "access_token=${OPENAPI_ACCESS_TOKEN}" >> /root/.edgerc
 echo "account_key=${OPENAPI_ACCOUNT_KEY}" >> /root/.edgerc # Future proofing
 echo "extra_qs=accountSwitchKey=${OPENAPI_ACCOUNT_KEY}" >> /root/.edgerc
 
-apt install apt-transport-https ca-certificates curl software-properties-common
+apt -y install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-apt update
+apt -y update
 apt-cache policy docker-ce
-apt install docker-ce
+apt -y install docker-ce
 
 # https://github.com/akamai/eaa-k8s-connector#docker-deployment
 docker run --rm --privileged \
