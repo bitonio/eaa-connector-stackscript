@@ -12,7 +12,7 @@
 
 ## Step by step
 
-## 1. Edit the Terraform variable
+## 1. Create your Terraform variables file
 
 Clone the file `terraform-script/var-files/example.tfvars`  
 and edit each variable.
@@ -22,8 +22,8 @@ and edit each variable.
 ```bash
 cd terraform-script
 terraform init
-terraform plan
-terraform apply
+terraform plan -var-file=var-files/yourfile.tfvars
+terraform apply -var-file=var-files/yourfile.tfvars
 ```
 
 ## 3. Remove the connector
