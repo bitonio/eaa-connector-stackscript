@@ -1,5 +1,7 @@
 # Run an EAA Connector on Linode
 
+Warning: This is an unofficial capability that is not officially supported by Linode or Akamai Technologies. Use at your own risk.
+
 ## Features
 
 - Spin up an EAA Connector in Linode
