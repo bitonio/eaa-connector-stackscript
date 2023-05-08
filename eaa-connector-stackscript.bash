@@ -30,6 +30,9 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 apt -y update
 apt-cache policy docker-ce
 apt -y install docker-ce
+apt install -y libnetfilter-queue-dev
+modprobe nfnetlink_queue
+echo "nfnetlink_queue" >> /etc/modules
 
 # https://github.com/akamai/eaa-k8s-connector#docker-deployment
 docker run --rm --privileged \
